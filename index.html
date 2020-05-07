@@ -1,0 +1,227 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript">
+var i=1,j=1;;
+h='#d9d9d9';
+function nam()
+{if(i==1){
+i=0;
+document.getElementById('but'). value="Clear";
+var a=document.getElementById('search').value;
+if(a){
+document.getElementById("text").innerHTML=a;
+document.getElementById('text').className=a;
+}
+else
+document.getElementById("text").innerHTML="The 3D Text";
+}
+else{
+document.getElementById('search').value="";
+document.getElementById('but'). value="Search";
+i=1;
+}
+}
+
+function shadow(){
+n=h;
+var text=document.getElementById('text');
+var shadow="";
+for(var i=0;i<20;i++)
+{
+shadow+= ( shadow? ',' :'') + -i*1+'px '+i*1+'px 0 '+h;
+}
+text.style.textShadow=shadow;
+}
+
+function tik(){
+var man=document.getElementById('oo');
+var tr=document.getElementById('text');
+var t=document.getElementById('te');
+var tl=document.getElementById('tc');
+var tll=document.getElementById('tu');
+tr.style.color=t.value;
+man.style.background=tll.value;
+tr.style.background=tll.value;
+h=tl.value;
+shadow();
+}
+function dic(){
+var a=document.getElementById('change');
+if(j==1)
+{j=0;
+a.style.left='0px';
+document.getElementById('goo').value='<<';
+}
+else{
+j=1;
+a.style.left='-300px';
+document.getElementById('goo').value='>>';
+}
+}
+function int(){
+document.getElementById('te').value="#ffffff";
+document.getElementById('tc').value="#d9d9d9";
+document.getElementById('tu').value="#f1f1f1";
+shadow();
+}
+window.onload=int;
+
+/*function down(){
+var pre=document.getElementById("pre");
+var main=document.getElementById("oo");
+
+//var dataUR=main.toDataURL();
+pre.src="10.jpg";
+}*/
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+background:#f1f1f1;
+}
+.main{
+position: relative;
+display:flex;
+align-items: center;
+justify-content: center;
+margin:0;
+padding:0;
+background:#f1f1f1;
+font-family:Poppin, sans-serif;
+min-height:20vh;
+widht:100%;
+height:400px;
+overflow:hidden;
+border:1px solid;
+}
+#search{
+outline: none;
+margin:6px;
+margin-right:0px;
+padding:5px;
+border:none;
+text-decoration:none;
+background:#;
+border-bottom:1.5px solid;
+font-size:18px;
+transition:all 0.5s;
+}
+#but{
+outline: none;
+color:#fff;
+background:linear-gradient(to right,#a7a8a8,#333);
+font-size:20px;
+border:none;
+border-radius:10px;
+margin:5px;
+margin-left:0px;
+padding:8px;
+transition:all 0.5s;
+}
+#search:hover{
+border-bottom:2px solid;
+transform:scale(1.03);
+}
+#but:hover{
+border:#568756;
+transform:scale(1.1);
+}
+#text{
+top:0px;
+position: relative;
+font-width:300px;
+font-size:5em;
+color:#fff;
+line-height:0.9em;
+letter-spacing:2px;
+text-align: center;
+transform:rotate(-28deg) skew(25deg);
+}
+#text:before{
+content: attr(class);
+position: absolute;
+top:25px;
+left:-40px;
+color:rgb(0,0,0,0.5);
+text-shadow:none;
+filter:blur(6px);
+z-index:-1;
+}
+.change p{
+margin:0px;
+margin-left:15px;
+font-size:1.3em;
+font-width:bold;
+transition:0.5s;
+}
+.change input{
+padding:0;
+outline: none;
+border:2px solid;
+border-radius:15%;
+}
+.change p:hover{
+font-width:bold;
+transform: scale(1.08);
+}
+#down {
+text-align: center;
+}
+#down input{
+margin:5px;
+background:#764535;
+padding:10px;
+border-radius:20px;
+font-size:25px;
+}
+</style>
+</head>
+<body>
+<header>
+<input type="text" placeholder="Try for your Name" id="search">
+<input type="button" id="but" value="Search" onclick="nam()">
+</header>
+
+
+<div class="main" id="oo">
+<h1 id="text" class="The 3D Text">The 3D Text</h1>
+</div>
+<!--<p>Size:
+<input type="range" id="ti" onchange="tik()">
+</p><br>-->
+
+<div class="change">
+<p>Front Color:
+<input type="color" id="te" onchange="tik()">
+</p><br>
+<p>Side Color:
+<input type="color" id="tc" onchange="tik()">
+</p>
+<br>
+<p>Background Color:
+<input type="color" id="tu" onchange="tik()">
+</p>
+</div>
+<br>
+<br>
+<br>
+
+<div id="down">
+<input type="button" value="Download" onclick="down()">
+</div>
+</div>
+</body>
+</html>
